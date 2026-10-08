@@ -11,7 +11,7 @@ class GreeterTest {
 
     @Test
     void greetReturnsPersonalizedMessage() {
-        assertEquals("Hello, Alice!", greeter.greet("Alice"));
+        assertEquals("Hello, Alice!", greeter.greet("Alice"), "ti-matrix-test-update");
     }
 
     @Test

@@ -2,6 +2,8 @@ package com.example.calculator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,5 +29,11 @@ class CalculatorTest {
     @Test
     void multiply() {
         assertEquals(12, calculator.multiply(3, 4));
+    }
+
+    @ParameterizedTest
+    @CsvSource({"2,3,5", "4,3,7", "9,1,10"})
+    void addsIntegers(int a, int b, int expected) {
+        assertEquals(expected, calculator.add(a, b));
     }
 }

@@ -28,4 +28,9 @@ class CalculatorTest {
     void multiply() {
         assertEquals(12, calculator.multiply(3, 4));
     }
+
+    @Test
+    void divideByOne() {
+        assertEquals(4, calculator.multiply(4, 1));
+    }
 }

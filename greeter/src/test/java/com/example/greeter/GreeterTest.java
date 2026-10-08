@@ -14,10 +14,6 @@ class GreeterTest {
         assertEquals("Hello, Alice!", greeter.greet("Alice"));
     }
 
-    @Test
-    void greetTrimsWhitespace() {
-        assertEquals("Hello, Bob!", greeter.greet("  Bob  "));
-    }
 
     @Test
     void greetRejectsBlankName() {

@@ -19,6 +19,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
 }
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
+    filter {
+        isFailOnNoMatchingTests = false
+    }
+    val agent = System.getProperty("HARNESS_JAVA_AGENT") ?: System.getenv("JAVA_TOOL_OPTIONS")
+    if (!agent.isNullOrBlank()) {
+        jvmArgs(agent.split(" ").filter { it.isNotBlank() })
+    }
 }

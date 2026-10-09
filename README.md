@@ -1,24 +1,24 @@
 # java-apps
 
-Monorepo folder containing two **independent** Maven projects (no shared parent POM):
+Monorepo folder containing two **independent** Gradle projects (no shared root build):
 
 | Directory    | Description                          |
 |--------------|--------------------------------------|
 | `greeter/`   | Simple greeting helper + CLI entry   |
 | `calculator/`| Basic integer math operations        |
 
-Each project has its own `pom.xml`, build, and tests.
+Each project has its own `build.gradle.kts`, Gradle Wrapper, and tests.
 
 ## Build and test
 
 ```bash
-cd greeter && mvn test
-cd calculator && mvn test
+cd greeter && ./gradlew test
+cd calculator && ./gradlew test
 ```
 
 Run the greeter CLI:
 
 ```bash
 cd greeter
-mvn exec:java -Dexec.mainClass=com.example.greeter.Main -Dexec.args="YourName"
+./gradlew run --args="YourName"
 ```

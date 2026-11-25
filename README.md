@@ -1,4 +1,4 @@
-# java-apps
+# java-app
 
 Monorepo folder containing two **independent** Maven projects (no shared parent POM):
 
